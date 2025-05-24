@@ -221,4 +221,19 @@ public class Agenda implements Serializable {
         lista4.remove(id3 - 1);
         ArquivosAgenda.salvarAg(lista4);
     }
+
+    public static void listarFaturamento(){
+        ArrayList<Agenda> lista4 = ArquivosAgenda.lerAgenda();
+        int i = 0;
+        if (lista4.isEmpty()) {
+            System.out.println("Nenhuma consulta cadastrada");
+        }
+        else {
+            for (Agenda a : lista4) {
+                System.out.printf("ID: %d || %s %n", i += 1, a);
+            }
+        }
+        System.out.printf("Faturamento total: %.2f%n", (i * valor));
+    }
+
 }

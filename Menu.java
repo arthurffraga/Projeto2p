@@ -81,8 +81,9 @@ public class Menu {
             System.out.println("Digite uma das opções abaixo:");
             System.out.println("1- Listar paciente");
             System.out.println("2- Listar consultas");
-            System.out.println("3- Voltar");
-            System.out.println("4- Sair");
+            System.out.println("3- Listar Faturamento");
+            System.out.println("4- Voltar");
+            System.out.println("5- Sair");
             opcao = input.next();
             if(opcao.equals("1")) {
                 Pacientes.listarPacientes();
@@ -91,10 +92,13 @@ public class Menu {
                 Agenda.listarAgenda();
             }
             else if(opcao.equals("3")) {
+                Agenda.listarFaturamento();
+            }
+            else if(opcao.equals("4")) {
                 menuPrincipal();
                 break;
             }
-            else if(opcao.equals("4")) {
+            else if(opcao.equals("5")) {
                 break;
             }
             else {

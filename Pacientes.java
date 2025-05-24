@@ -17,7 +17,18 @@ public class Pacientes extends Pessoa{
     public static Pacientes cadastrar() {
         Scanner input = new Scanner(System.in);
         System.out.println("Digite o nome:");
-        String nome = input.next();
+        String nome = "";
+        boolean nomeV = false;
+        while (!nomeV){
+            nome = input.next();
+            if (nome.matches("[a-zA-Z]+")){
+                nomeV = true;
+                break;
+            }
+            else{
+                System.out.println("Digite um nome com apenas letras");
+            }
+        }
         System.out.println("Digite a idade:");
         int idade = 0;
         boolean idadeV = false;
@@ -125,7 +136,18 @@ public class Pacientes extends Pessoa{
             opcao = input.next();
             if (opcao.equals("1")) {
                 System.out.println("Digite o novo nome:");
-                String nome = input.next();
+                String nome = "";
+                boolean nomeV = false;
+                while (!nomeV){
+                    nome = input.next();
+                    if (nome.matches("[a-zA-Z]+")){
+                        nomeV = true;
+                        break;
+                    }
+                    else{
+                        System.out.println("Digite um nome com apenas letras");
+                    }
+                }
                 paciente.setNome(nome);
                 Arquivos.salvarTodos(listaP);
                 System.out.println("Nome atualizado!");
@@ -208,7 +230,7 @@ public class Pacientes extends Pessoa{
         ArrayList<Pacientes> listap2 = Arquivos.ler();
         int i = 0;
         if (listap2.isEmpty()) {
-            System.out.println("Nenhuma consulta cadastrada");
+            System.out.println("Nenhum paciente cadastrado");
             return;
         }
         else {
