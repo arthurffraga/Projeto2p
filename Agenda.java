@@ -207,6 +207,7 @@ public class Agenda implements Serializable {
         }
         int id3 = input.nextInt();
         lista4.remove(id3 - 1);
+        System.out.println("Agendamento excluído");
         ArquivosAgenda.salvarAg(lista4);
     }
 
