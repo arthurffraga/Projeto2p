@@ -46,34 +46,24 @@ public class Pacientes extends Pessoa{
         String cpf = "";
         boolean cpfV = false;
         while (!cpfV) {
-            try {
-                cpf = input.next();
-                if(cpf.matches("\\d{11}")){
-                    cpfV = true;
-                }
-                else{
-                    System.out.println("Digite um cpf valido");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Digite um número inteiro:");
-                input.nextLine();
+            cpf = input.next();
+            if(cpf.matches("\\d{11}")){
+                cpfV = true;
+            }
+            else {
+                System.out.println("Digite um cpf valido");
             }
         }
         System.out.println("Digite o número para contato:");
         String numero = "";
         boolean numV = false;
         while (!numV) {
-            try {
-                numero = input.next();
-                if(numero.matches("\\d{11}")){
-                    numV = true;
-                }
-                else{
-                    System.out.println("Digite um número valido");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Digite um número inteiro:");
-                input.nextLine();
+            numero = input.next();
+            if(numero.matches("\\d{11}")){
+                numV = true;
+            }
+            else {
+                System.out.println("Digite um número valido");
             }
         }
         System.out.println("Deseja cadastrar esse paciente mesmo?");
@@ -142,7 +132,6 @@ public class Pacientes extends Pessoa{
                     nome = input.next();
                     if (nome.matches("[a-zA-Z]+")){
                         nomeV = true;
-                        break;
                     }
                     else{
                         System.out.println("Digite um nome com apenas letras");
@@ -177,17 +166,11 @@ public class Pacientes extends Pessoa{
                 String cpf = "";
                 boolean cpfV = false;
                 while (!cpfV) {
-                    try {
-                        cpf = input.next();
-                        if(cpf.matches("\\d{11}")){
-                            cpfV = true;
-                        }
-                        else{
-                            System.out.println("Digite um cpf valido");
-                        }
-                    } catch (InputMismatchException e) {
-                        System.out.println("Digite um número inteiro:");
-                        input.nextLine();
+                    if(cpf.matches("\\d{11}")){
+                        cpfV = true;
+                    }
+                    else{
+                        System.out.println("Digite um cpf valido");
                     }
                 }
                 paciente.setCpf(cpf);
@@ -200,17 +183,12 @@ public class Pacientes extends Pessoa{
                 String numero = "";
                 boolean numV = false;
                 while (!numV) {
-                    try {
-                        numero = input.next();
-                        if(numero.matches("\\d{11}")){
-                            numV = true;
-                        }
-                        else{
-                            System.out.println("Digite um número valido");
-                        }
-                    } catch (InputMismatchException e) {
-                        System.out.println("Digite um número inteiro:");
-                        input.nextLine();
+                    numero = input.next();
+                    if(numero.matches("\\d{11}")){
+                        numV = true;
+                    }
+                    else{
+                        System.out.println("Digite um número valido");
                     }
                 }
                 paciente.setNumero(numero);

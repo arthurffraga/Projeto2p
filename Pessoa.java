@@ -10,9 +10,7 @@ public class Pessoa implements Serializable {
         this.nome = nome;
         this.idade = idade;
         this.numero = numero;
-        if (cpf.matches("\\d{11}")) {
-            this.cpf = cpf;
-        }
+        this.cpf = cpf;
     }
 
     public String getNumero() {

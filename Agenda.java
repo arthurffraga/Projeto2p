@@ -75,18 +75,14 @@ public class Agenda implements Serializable {
         String hora = "";
         boolean horaV = false;
         while (!horaV) {
-            try {
-                hora = input.next();
-                if(hora.matches("\\d{2}:\\d{2}")){
-                    horaV = true;
-                }
-                else{
-                    System.out.println("Digite a hora corretamente");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Erro");
-                input.nextLine();
+            hora = input.next();
+            if(hora.matches("\\d{2}:\\d{2}")){
+                horaV = true;
             }
+            else{
+                System.out.println("Digite a hora corretamente");
+            }
+
         }
         System.out.println("Tem certeza que deseja marcar esta consulta?");
         System.out.printf("%s| data: %s | hora: %s | Médica: %s %n", paciente.toString(), data, hora, medica);
@@ -108,14 +104,16 @@ public class Agenda implements Serializable {
         Agenda agendado = new Agenda(paciente, data, hora);
         return agendado;
     }
+
     public static void listarAgenda() {
         ArrayList<Agenda> lista = ArquivosAgenda.lerAgenda();
+        int i = 0;
         if (lista.isEmpty()) {
             System.out.println("Nenhum paciente cadastrado.");
         }
         else {
             for (Agenda p : lista) {
-                System.out.println(p);
+                System.out.printf("ID: %d || %s %n", i += 1, p);
             }
         }
     }
@@ -156,17 +154,12 @@ public class Agenda implements Serializable {
                 String dataNova = "";
                 boolean dataV = false;
                 while (!dataV) {
-                    try {
-                        dataNova = input.next();
-                        if(dataNova.matches("\\d{2}/\\d{2}/\\d{4}")){
-                            dataV = true;
-                        }
-                        else{
-                            System.out.println("Digite a data corretamente");
-                        }
-                    } catch (InputMismatchException e) {
-                        System.out.println("Erro");
-                        input.nextLine();
+                    dataNova = input.next();
+                    if(dataNova.matches("\\d{2}/\\d{2}/\\d{4}")){
+                        dataV = true;
+                    }
+                    else{
+                        System.out.println("Digite a data corretamente");
                     }
                 }
                 agendamento.setData(dataNova);
@@ -179,17 +172,12 @@ public class Agenda implements Serializable {
                 String horaNova = "";
                 boolean horaV = false;
                 while (!horaV) {
-                    try {
-                        horaNova = input.next();
-                        if(horaNova.matches("\\d{2}:\\d{2}")){
-                            horaV = true;
-                        }
-                        else{
-                            System.out.println("Digite a hora corretamente");
-                        }
-                    } catch (InputMismatchException e) {
-                        System.out.println("Erro");
-                        input.nextLine();
+                    horaNova = input.next();
+                    if(horaNova.matches("\\d{2}:\\d{2}")){
+                        horaV = true;
+                    }
+                    else{
+                        System.out.println("Digite a hora corretamente");
                     }
                 }
                 agendamento.setHora(horaNova);
