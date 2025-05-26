@@ -166,6 +166,7 @@ public class Pacientes extends Pessoa{
                 String cpf = "";
                 boolean cpfV = false;
                 while (!cpfV) {
+                    cpf = input.next();
                     if(cpf.matches("\\d{11}")){
                         cpfV = true;
                     }
