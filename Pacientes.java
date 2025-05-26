@@ -219,6 +219,7 @@ public class Pacientes extends Pessoa{
         }
         int id3 = input.nextInt();
         listap2.remove(id3 - 1);
+        System.out.println("Paciente excluído!");
         Arquivos.salvarTodos(listap2);
     }
 }
