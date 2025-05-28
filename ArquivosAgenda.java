@@ -31,7 +31,7 @@ public class ArquivosAgenda {
             return new ArrayList<>();
         }
         catch (IOException | ClassNotFoundException e) {
-            System.out.println("Ocorreu um erro crítico ao ler os agendamentos.");
+            System.out.println("Ocorreu um erro ao ler os agendamentos.");
             e.printStackTrace();
         }
         return lista;
